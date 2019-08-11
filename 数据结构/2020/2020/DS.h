@@ -13,7 +13,7 @@ namespace DS
 		typedef int ElemType;
 		typedef ElemType* ElemTypePtr;
 
-		typedef struct SqList
+		struct SqList
 		{
 			ElemType data[Maxsize];
 			Length length;
@@ -27,6 +27,10 @@ namespace DS
 			{
 				memcpy(data,D,sizeof(D)*size);
 				length = size;
+			}
+			SqList(const int& arg, ...)
+			{
+				//TODO 列表初始化
 			}
 			~SqList()
 			{
@@ -57,14 +61,16 @@ namespace DS
 // 				fputs(strInfo, stdout);
 
 				va_list ap;
-				char *p, *sval;
+				const char* p;
+				char *sval;
 				int ival;
 				double dval;
 
 				va_start(ap, format);
-				for (p = ap; *p; p++) {
+				for (p = format; *p; p++) {
 					if (*p != '%') {
 						putchar(*p);
+						//std::cout << *p;
 						continue;
 					}
 					switch (*++p) {
@@ -98,6 +104,6 @@ namespace DS
 				return length == 0;
 			}
 			
-		}SqList,*SqList;
+		};
 	}
 }
