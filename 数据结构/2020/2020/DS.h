@@ -3,16 +3,22 @@
 #include <stdlib.h>
 #include <string>
 #include <stdarg.h>
+
+/*
+@   WritenBy WangFengPing
+@   Project  2020DS
+*/
 namespace DS
 {
+
+	#define  Maxsize 50
+	typedef unsigned int Length;
+	typedef unsigned int Size;
+	typedef int ElemType;
+	typedef ElemType* ElemTypePtr;
+
 	namespace List
 	{
-		#define  Maxsize 50
-		typedef unsigned int Length;
-		typedef unsigned int Size;
-		typedef int ElemType;
-		typedef ElemType* ElemTypePtr;
-
 		struct SqList
 		{
 			ElemType data[Maxsize];
@@ -106,4 +112,6 @@ namespace DS
 			
 		};
 	}
+
+	
 }
